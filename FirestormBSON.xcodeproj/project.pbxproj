@@ -1,0 +1,406 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA5E6CAA1416B78100CE1C1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5E6CA91416B78100CE1C1D /* Foundation.framework */; };
+		DA5E6CB01416B78100CE1C1D /* FirestormBSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CAF1416B78100CE1C1D /* FirestormBSON.m */; };
+		DA5E6CB81416B78100CE1C1D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5E6CB71416B78100CE1C1D /* SenTestingKit.framework */; };
+		DA5E6CBA1416B78100CE1C1D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5E6CB91416B78100CE1C1D /* UIKit.framework */; };
+		DA5E6CBB1416B78100CE1C1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5E6CA91416B78100CE1C1D /* Foundation.framework */; };
+		DA5E6CBD1416B78100CE1C1D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5E6CBC1416B78100CE1C1D /* CoreGraphics.framework */; };
+		DA5E6CC01416B78100CE1C1D /* libFirestormBSON.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5E6CA61416B78100CE1C1D /* libFirestormBSON.a */; };
+		DA5E6CC61416B78100CE1C1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA5E6CC41416B78100CE1C1D /* InfoPlist.strings */; };
+		DA5E6CC81416B78100CE1C1D /* FirestormBSONTests.h in Resources */ = {isa = PBXBuildFile; fileRef = DA5E6CC71416B78100CE1C1D /* FirestormBSONTests.h */; };
+		DA5E6CCA1416B78100CE1C1D /* FirestormBSONTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CC91416B78100CE1C1D /* FirestormBSONTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA5E6CBE1416B78100CE1C1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA5E6C9D1416B78100CE1C1D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA5E6CA51416B78100CE1C1D;
+			remoteInfo = FirestormBSON;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DA5E6CA61416B78100CE1C1D /* libFirestormBSON.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFirestormBSON.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA5E6CA91416B78100CE1C1D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DA5E6CAD1416B78100CE1C1D /* FirestormBSON-Prefix.pch */ = {isa = PBXFileReference; path = "FirestormBSON-Prefix.pch"; sourceTree = "<group>"; };
+		DA5E6CAE1416B78100CE1C1D /* FirestormBSON.h */ = {isa = PBXFileReference; path = FirestormBSON.h; sourceTree = "<group>"; };
+		DA5E6CAF1416B78100CE1C1D /* FirestormBSON.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirestormBSON.m; sourceTree = "<group>"; };
+		DA5E6CB61416B78100CE1C1D /* FirestormBSONTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirestormBSONTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA5E6CB71416B78100CE1C1D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		DA5E6CB91416B78100CE1C1D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		DA5E6CBC1416B78100CE1C1D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		DA5E6CC31416B78100CE1C1D /* FirestormBSONTests-Info.plist */ = {isa = PBXFileReference; path = "FirestormBSONTests-Info.plist"; sourceTree = "<group>"; };
+		DA5E6CC51416B78100CE1C1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DA5E6CC71416B78100CE1C1D /* FirestormBSONTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirestormBSONTests.h; sourceTree = "<group>"; };
+		DA5E6CC91416B78100CE1C1D /* FirestormBSONTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirestormBSONTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA5E6CA31416B78100CE1C1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA5E6CAA1416B78100CE1C1D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5E6CB21416B78100CE1C1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA5E6CB81416B78100CE1C1D /* SenTestingKit.framework in Frameworks */,
+				DA5E6CBA1416B78100CE1C1D /* UIKit.framework in Frameworks */,
+				DA5E6CBB1416B78100CE1C1D /* Foundation.framework in Frameworks */,
+				DA5E6CBD1416B78100CE1C1D /* CoreGraphics.framework in Frameworks */,
+				DA5E6CC01416B78100CE1C1D /* libFirestormBSON.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA5E6C9B1416B78100CE1C1D = {
+			isa = PBXGroup;
+			children = (
+				DA5E6CAB1416B78100CE1C1D /* FirestormBSON */,
+				DA5E6CC11416B78100CE1C1D /* FirestormBSONTests */,
+				DA5E6CA81416B78100CE1C1D /* Frameworks */,
+				DA5E6CA71416B78100CE1C1D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA5E6CA71416B78100CE1C1D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA5E6CA61416B78100CE1C1D /* libFirestormBSON.a */,
+				DA5E6CB61416B78100CE1C1D /* FirestormBSONTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA5E6CA81416B78100CE1C1D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA5E6CA91416B78100CE1C1D /* Foundation.framework */,
+				DA5E6CB71416B78100CE1C1D /* SenTestingKit.framework */,
+				DA5E6CB91416B78100CE1C1D /* UIKit.framework */,
+				DA5E6CBC1416B78100CE1C1D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA5E6CAB1416B78100CE1C1D /* FirestormBSON */ = {
+			isa = PBXGroup;
+			children = (
+				DA5E6CAE1416B78100CE1C1D /* FirestormBSON.h */,
+				DA5E6CAF1416B78100CE1C1D /* FirestormBSON.m */,
+				DA5E6CAC1416B78100CE1C1D /* Supporting Files */,
+			);
+			path = FirestormBSON;
+			sourceTree = "<group>";
+		};
+		DA5E6CAC1416B78100CE1C1D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA5E6CAD1416B78100CE1C1D /* FirestormBSON-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA5E6CC11416B78100CE1C1D /* FirestormBSONTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA5E6CC71416B78100CE1C1D /* FirestormBSONTests.h */,
+				DA5E6CC91416B78100CE1C1D /* FirestormBSONTests.m */,
+				DA5E6CC21416B78100CE1C1D /* Supporting Files */,
+			);
+			path = FirestormBSONTests;
+			sourceTree = "<group>";
+		};
+		DA5E6CC21416B78100CE1C1D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA5E6CC31416B78100CE1C1D /* FirestormBSONTests-Info.plist */,
+				DA5E6CC41416B78100CE1C1D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DA5E6CA41416B78100CE1C1D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		DA5E6CA51416B78100CE1C1D /* FirestormBSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA5E6CCD1416B78100CE1C1D /* Build configuration list for PBXNativeTarget "FirestormBSON" */;
+			buildPhases = (
+				DA5E6CA21416B78100CE1C1D /* Sources */,
+				DA5E6CA31416B78100CE1C1D /* Frameworks */,
+				DA5E6CA41416B78100CE1C1D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FirestormBSON;
+			productName = FirestormBSON;
+			productReference = DA5E6CA61416B78100CE1C1D /* libFirestormBSON.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DA5E6CB51416B78100CE1C1D /* FirestormBSONTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA5E6CD01416B78100CE1C1D /* Build configuration list for PBXNativeTarget "FirestormBSONTests" */;
+			buildPhases = (
+				DA5E6CB11416B78100CE1C1D /* Sources */,
+				DA5E6CB21416B78100CE1C1D /* Frameworks */,
+				DA5E6CB31416B78100CE1C1D /* Resources */,
+				DA5E6CB41416B78100CE1C1D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA5E6CBF1416B78100CE1C1D /* PBXTargetDependency */,
+			);
+			name = FirestormBSONTests;
+			productName = FirestormBSONTests;
+			productReference = DA5E6CB61416B78100CE1C1D /* FirestormBSONTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA5E6C9D1416B78100CE1C1D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = FSDEV;
+			};
+			buildConfigurationList = DA5E6CA01416B78100CE1C1D /* Build configuration list for PBXProject "FirestormBSON" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DA5E6C9B1416B78100CE1C1D;
+			productRefGroup = DA5E6CA71416B78100CE1C1D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA5E6CA51416B78100CE1C1D /* FirestormBSON */,
+				DA5E6CB51416B78100CE1C1D /* FirestormBSONTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA5E6CB31416B78100CE1C1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA5E6CC61416B78100CE1C1D /* InfoPlist.strings in Resources */,
+				DA5E6CC81416B78100CE1C1D /* FirestormBSONTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DA5E6CB41416B78100CE1C1D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA5E6CA21416B78100CE1C1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA5E6CB01416B78100CE1C1D /* FirestormBSON.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5E6CB11416B78100CE1C1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA5E6CCA1416B78100CE1C1D /* FirestormBSONTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA5E6CBF1416B78100CE1C1D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA5E6CA51416B78100CE1C1D /* FirestormBSON */;
+			targetProxy = DA5E6CBE1416B78100CE1C1D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DA5E6CC41416B78100CE1C1D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA5E6CC51416B78100CE1C1D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA5E6CCB1416B78100CE1C1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DA5E6CCC1416B78100CE1C1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA5E6CCE1416B78100CE1C1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/FirestormBSON.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FirestormBSON/FirestormBSON-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DA5E6CCF1416B78100CE1C1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/FirestormBSON.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FirestormBSON/FirestormBSON-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		DA5E6CD11416B78100CE1C1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FirestormBSON/FirestormBSON-Prefix.pch";
+				INFOPLIST_FILE = "FirestormBSONTests/FirestormBSONTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		DA5E6CD21416B78100CE1C1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FirestormBSON/FirestormBSON-Prefix.pch";
+				INFOPLIST_FILE = "FirestormBSONTests/FirestormBSONTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA5E6CA01416B78100CE1C1D /* Build configuration list for PBXProject "FirestormBSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA5E6CCB1416B78100CE1C1D /* Debug */,
+				DA5E6CCC1416B78100CE1C1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA5E6CCD1416B78100CE1C1D /* Build configuration list for PBXNativeTarget "FirestormBSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA5E6CCE1416B78100CE1C1D /* Debug */,
+				DA5E6CCF1416B78100CE1C1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DA5E6CD01416B78100CE1C1D /* Build configuration list for PBXNativeTarget "FirestormBSONTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA5E6CD11416B78100CE1C1D /* Debug */,
+				DA5E6CD21416B78100CE1C1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA5E6C9D1416B78100CE1C1D /* Project object */;
+}
