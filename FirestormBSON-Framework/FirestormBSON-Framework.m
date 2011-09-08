@@ -1,14 +1,14 @@
 //
-//  FirestormBSON.m
-//  FirestormBSON
+//  FirestormBSON-Framework.m
+//  FirestormBSON-Framework
 //
-//  Created by Christopher Miller on 9/6/11.
+//  Created by Christopher Miller on 9/7/11.
 //  Copyright 2011 FSDEV. All rights reserved.
 //
 
-#import "FirestormBSON.h"
+#import "FirestormBSON-Framework.h"
 
-@implementation FirestormBSON
+@implementation FirestormBSON_Framework
 
 - (id)init
 {

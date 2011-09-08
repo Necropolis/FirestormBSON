@@ -8,6 +8,8 @@
 
 #import "FirestormBSONTests.h"
 
+#include "bson.h"
+
 @implementation FirestormBSONTests
 
 - (void)setUp

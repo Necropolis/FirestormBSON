@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA5E6CAA1416B78100CE1C1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5E6CA91416B78100CE1C1D /* Foundation.framework */; };
-		DA5E6CB01416B78100CE1C1D /* FirestormBSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CAF1416B78100CE1C1D /* FirestormBSON.m */; };
+		DA5E6CB01416B78100CE1C1D /* FSBsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CAF1416B78100CE1C1D /* FSBsonParser.m */; };
 		DA5E6CB81416B78100CE1C1D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5E6CB71416B78100CE1C1D /* SenTestingKit.framework */; };
 		DA5E6CBA1416B78100CE1C1D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5E6CB91416B78100CE1C1D /* UIKit.framework */; };
 		DA5E6CBB1416B78100CE1C1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5E6CA91416B78100CE1C1D /* Foundation.framework */; };
@@ -17,6 +17,64 @@
 		DA5E6CC61416B78100CE1C1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA5E6CC41416B78100CE1C1D /* InfoPlist.strings */; };
 		DA5E6CC81416B78100CE1C1D /* FirestormBSONTests.h in Resources */ = {isa = PBXBuildFile; fileRef = DA5E6CC71416B78100CE1C1D /* FirestormBSONTests.h */; };
 		DA5E6CCA1416B78100CE1C1D /* FirestormBSONTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CC91416B78100CE1C1D /* FirestormBSONTests.m */; };
+		DA5E6CE11416B7B100CE1C1D /* bson.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CD31416B7B100CE1C1D /* bson.c */; };
+		DA5E6CE21416B7B100CE1C1D /* bson.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CD41416B7B100CE1C1D /* bson.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA5E6CE31416B7B100CE1C1D /* encoding.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CD51416B7B100CE1C1D /* encoding.c */; };
+		DA5E6CE41416B7B100CE1C1D /* encoding.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CD61416B7B100CE1C1D /* encoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA5E6CE51416B7B100CE1C1D /* gridfs.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CD71416B7B100CE1C1D /* gridfs.c */; };
+		DA5E6CE61416B7B100CE1C1D /* gridfs.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CD81416B7B100CE1C1D /* gridfs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA5E6CE71416B7B100CE1C1D /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CD91416B7B100CE1C1D /* md5.c */; };
+		DA5E6CE81416B7B100CE1C1D /* md5.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CDA1416B7B100CE1C1D /* md5.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA5E6CE91416B7B100CE1C1D /* mongo.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CDB1416B7B100CE1C1D /* mongo.c */; };
+		DA5E6CEA1416B7B100CE1C1D /* mongo.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CDC1416B7B100CE1C1D /* mongo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA5E6CEB1416B7B100CE1C1D /* net.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CDD1416B7B100CE1C1D /* net.c */; };
+		DA5E6CEC1416B7B100CE1C1D /* net.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CDE1416B7B100CE1C1D /* net.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA5E6CED1416B7B100CE1C1D /* numbers.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CDF1416B7B100CE1C1D /* numbers.c */; };
+		DA5E6CEE1416B7B100CE1C1D /* platform.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CE01416B7B100CE1C1D /* platform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA5E6CF21416B98800CE1C1D /* FSBsonSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CF01416B98800CE1C1D /* FSBsonSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA5E6CF31416B98800CE1C1D /* FSBsonSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CF11416B98800CE1C1D /* FSBsonSerializer.m */; };
+		DAC062A51417BAB600B974CB /* FSBsonSerializable.h in Headers */ = {isa = PBXBuildFile; fileRef = DAC062A41417BAB600B974CB /* FSBsonSerializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAC062AE141806B000B974CB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC062AD141806B000B974CB /* Cocoa.framework */; };
+		DAC062B8141806B000B974CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAC062B6141806B000B974CB /* InfoPlist.strings */; };
+		DAC062BC141806B000B974CB /* FirestormBSON-Framework.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC062BB141806B000B974CB /* FirestormBSON-Framework.m */; };
+		DAC062C3141806B000B974CB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5E6CB71416B78100CE1C1D /* SenTestingKit.framework */; };
+		DAC062C4141806B100B974CB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC062AD141806B000B974CB /* Cocoa.framework */; };
+		DAC062C7141806B100B974CB /* FirestormBSON-Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC062AC141806B000B974CB /* FirestormBSON-Framework.framework */; };
+		DAC062CD141806B100B974CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAC062CB141806B100B974CB /* InfoPlist.strings */; };
+		DAC062CF141806B100B974CB /* FirestormBSON_FrameworkTests.h in Resources */ = {isa = PBXBuildFile; fileRef = DAC062CE141806B100B974CB /* FirestormBSON_FrameworkTests.h */; };
+		DAC062D1141806B100B974CB /* FirestormBSON_FrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC062D0141806B100B974CB /* FirestormBSON_FrameworkTests.m */; };
+		DAC062DE141806CB00B974CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5E6CA91416B78100CE1C1D /* Foundation.framework */; };
+		DAC062E1141806CC00B974CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC062E0141806CC00B974CB /* main.m */; };
+		DAC062E5141806CC00B974CB /* TestStuff.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = DAC062E4141806CC00B974CB /* TestStuff.1 */; };
+		DAC062E9141806DA00B974CB /* bson.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CD31416B7B100CE1C1D /* bson.c */; };
+		DAC062EA141806DA00B974CB /* bson.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CD31416B7B100CE1C1D /* bson.c */; };
+		DAC062EB141806DD00B974CB /* encoding.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CD51416B7B100CE1C1D /* encoding.c */; };
+		DAC062EC141806DE00B974CB /* encoding.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CD51416B7B100CE1C1D /* encoding.c */; };
+		DAC062ED141806E200B974CB /* gridfs.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CD71416B7B100CE1C1D /* gridfs.c */; };
+		DAC062EE141806E200B974CB /* gridfs.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CD71416B7B100CE1C1D /* gridfs.c */; };
+		DAC062EF141806E500B974CB /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CD91416B7B100CE1C1D /* md5.c */; };
+		DAC062F0141806E600B974CB /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CD91416B7B100CE1C1D /* md5.c */; };
+		DAC062F1141806E900B974CB /* mongo.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CDB1416B7B100CE1C1D /* mongo.c */; };
+		DAC062F2141806EA00B974CB /* mongo.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CDB1416B7B100CE1C1D /* mongo.c */; };
+		DAC062F3141806ED00B974CB /* net.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CDD1416B7B100CE1C1D /* net.c */; };
+		DAC062F4141806EE00B974CB /* net.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CDD1416B7B100CE1C1D /* net.c */; };
+		DAC062F5141806F000B974CB /* numbers.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CDF1416B7B100CE1C1D /* numbers.c */; };
+		DAC062F6141806F100B974CB /* numbers.c in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CDF1416B7B100CE1C1D /* numbers.c */; };
+		DAC062F91418070900B974CB /* FSBsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CAE1416B78100CE1C1D /* FSBsonParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAC062FA1418070C00B974CB /* FSBsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CAE1416B78100CE1C1D /* FSBsonParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAC062FB1418071100B974CB /* FSBsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CAF1416B78100CE1C1D /* FSBsonParser.m */; };
+		DAC062FC1418071100B974CB /* FSBsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CAF1416B78100CE1C1D /* FSBsonParser.m */; };
+		DAC062FD1418071A00B974CB /* FSBsonSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CF01416B98800CE1C1D /* FSBsonSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAC062FE1418071F00B974CB /* FSBsonSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CF11416B98800CE1C1D /* FSBsonSerializer.m */; };
+		DAC062FF1418072000B974CB /* FSBsonSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5E6CF11416B98800CE1C1D /* FSBsonSerializer.m */; };
+		DAC063001418072300B974CB /* FSBsonSerializable.h in Headers */ = {isa = PBXBuildFile; fileRef = DAC062A41417BAB600B974CB /* FSBsonSerializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAC063011418073700B974CB /* bson.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CD41416B7B100CE1C1D /* bson.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAC063021418073E00B974CB /* encoding.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CD61416B7B100CE1C1D /* encoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAC063031418074400B974CB /* gridfs.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CD81416B7B100CE1C1D /* gridfs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAC063041418074A00B974CB /* md5.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CDA1416B7B100CE1C1D /* md5.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAC063051418075000B974CB /* mongo.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CDC1416B7B100CE1C1D /* mongo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAC063061418075600B974CB /* net.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CDE1416B7B100CE1C1D /* net.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAC063071418075B00B974CB /* platform.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5E6CE01416B7B100CE1C1D /* platform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,22 +85,78 @@
 			remoteGlobalIDString = DA5E6CA51416B78100CE1C1D;
 			remoteInfo = FirestormBSON;
 		};
+		DAC062C5141806B100B974CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA5E6C9D1416B78100CE1C1D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DAC062AB141806B000B974CB;
+			remoteInfo = "FirestormBSON-Framework";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DAC062DA141806CB00B974CB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				DAC062E5141806CC00B974CB /* TestStuff.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DA5E6CA61416B78100CE1C1D /* libFirestormBSON.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFirestormBSON.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5E6CA91416B78100CE1C1D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		DA5E6CAD1416B78100CE1C1D /* FirestormBSON-Prefix.pch */ = {isa = PBXFileReference; path = "FirestormBSON-Prefix.pch"; sourceTree = "<group>"; };
-		DA5E6CAE1416B78100CE1C1D /* FirestormBSON.h */ = {isa = PBXFileReference; path = FirestormBSON.h; sourceTree = "<group>"; };
-		DA5E6CAF1416B78100CE1C1D /* FirestormBSON.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirestormBSON.m; sourceTree = "<group>"; };
+		DA5E6CAD1416B78100CE1C1D /* FirestormBSON-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FirestormBSON-Prefix.pch"; sourceTree = "<group>"; };
+		DA5E6CAE1416B78100CE1C1D /* FSBsonParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSBsonParser.h; sourceTree = "<group>"; };
+		DA5E6CAF1416B78100CE1C1D /* FSBsonParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSBsonParser.m; sourceTree = "<group>"; };
 		DA5E6CB61416B78100CE1C1D /* FirestormBSONTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirestormBSONTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5E6CB71416B78100CE1C1D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		DA5E6CB91416B78100CE1C1D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		DA5E6CBC1416B78100CE1C1D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		DA5E6CC31416B78100CE1C1D /* FirestormBSONTests-Info.plist */ = {isa = PBXFileReference; path = "FirestormBSONTests-Info.plist"; sourceTree = "<group>"; };
+		DA5E6CC31416B78100CE1C1D /* FirestormBSONTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FirestormBSONTests-Info.plist"; sourceTree = "<group>"; };
 		DA5E6CC51416B78100CE1C1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA5E6CC71416B78100CE1C1D /* FirestormBSONTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirestormBSONTests.h; sourceTree = "<group>"; };
 		DA5E6CC91416B78100CE1C1D /* FirestormBSONTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirestormBSONTests.m; sourceTree = "<group>"; };
+		DA5E6CD31416B7B100CE1C1D /* bson.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bson.c; path = "mongo-c-driver/src/bson.c"; sourceTree = "<group>"; };
+		DA5E6CD41416B7B100CE1C1D /* bson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bson.h; path = "mongo-c-driver/src/bson.h"; sourceTree = "<group>"; };
+		DA5E6CD51416B7B100CE1C1D /* encoding.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = encoding.c; path = "mongo-c-driver/src/encoding.c"; sourceTree = "<group>"; };
+		DA5E6CD61416B7B100CE1C1D /* encoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = encoding.h; path = "mongo-c-driver/src/encoding.h"; sourceTree = "<group>"; };
+		DA5E6CD71416B7B100CE1C1D /* gridfs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gridfs.c; path = "mongo-c-driver/src/gridfs.c"; sourceTree = "<group>"; };
+		DA5E6CD81416B7B100CE1C1D /* gridfs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gridfs.h; path = "mongo-c-driver/src/gridfs.h"; sourceTree = "<group>"; };
+		DA5E6CD91416B7B100CE1C1D /* md5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = md5.c; path = "mongo-c-driver/src/md5.c"; sourceTree = "<group>"; };
+		DA5E6CDA1416B7B100CE1C1D /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = md5.h; path = "mongo-c-driver/src/md5.h"; sourceTree = "<group>"; };
+		DA5E6CDB1416B7B100CE1C1D /* mongo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mongo.c; path = "mongo-c-driver/src/mongo.c"; sourceTree = "<group>"; };
+		DA5E6CDC1416B7B100CE1C1D /* mongo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mongo.h; path = "mongo-c-driver/src/mongo.h"; sourceTree = "<group>"; };
+		DA5E6CDD1416B7B100CE1C1D /* net.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = net.c; path = "mongo-c-driver/src/net.c"; sourceTree = "<group>"; };
+		DA5E6CDE1416B7B100CE1C1D /* net.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = net.h; path = "mongo-c-driver/src/net.h"; sourceTree = "<group>"; };
+		DA5E6CDF1416B7B100CE1C1D /* numbers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = numbers.c; path = "mongo-c-driver/src/numbers.c"; sourceTree = "<group>"; };
+		DA5E6CE01416B7B100CE1C1D /* platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = platform.h; path = "mongo-c-driver/src/platform.h"; sourceTree = "<group>"; };
+		DA5E6CF01416B98800CE1C1D /* FSBsonSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBsonSerializer.h; sourceTree = "<group>"; };
+		DA5E6CF11416B98800CE1C1D /* FSBsonSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSBsonSerializer.m; sourceTree = "<group>"; };
+		DAC062A41417BAB600B974CB /* FSBsonSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBsonSerializable.h; sourceTree = "<group>"; };
+		DAC062AC141806B000B974CB /* FirestormBSON-Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "FirestormBSON-Framework.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAC062AD141806B000B974CB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		DAC062B0141806B000B974CB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		DAC062B1141806B000B974CB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DAC062B2141806B000B974CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DAC062B5141806B000B974CB /* FirestormBSON-Framework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FirestormBSON-Framework-Info.plist"; sourceTree = "<group>"; };
+		DAC062B7141806B000B974CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DAC062B9141806B000B974CB /* FirestormBSON-Framework-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FirestormBSON-Framework-Prefix.pch"; sourceTree = "<group>"; };
+		DAC062BA141806B000B974CB /* FirestormBSON-Framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FirestormBSON-Framework.h"; sourceTree = "<group>"; };
+		DAC062BB141806B000B974CB /* FirestormBSON-Framework.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FirestormBSON-Framework.m"; sourceTree = "<group>"; };
+		DAC062C2141806B000B974CB /* FirestormBSON-FrameworkTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FirestormBSON-FrameworkTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAC062CA141806B100B974CB /* FirestormBSON-FrameworkTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FirestormBSON-FrameworkTests-Info.plist"; sourceTree = "<group>"; };
+		DAC062CC141806B100B974CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DAC062CE141806B100B974CB /* FirestormBSON_FrameworkTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirestormBSON_FrameworkTests.h; sourceTree = "<group>"; };
+		DAC062D0141806B100B974CB /* FirestormBSON_FrameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirestormBSON_FrameworkTests.m; sourceTree = "<group>"; };
+		DAC062DC141806CB00B974CB /* TestStuff */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestStuff; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAC062E0141806CC00B974CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DAC062E3141806CC00B974CB /* TestStuff-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestStuff-Prefix.pch"; sourceTree = "<group>"; };
+		DAC062E4141806CC00B974CB /* TestStuff.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = TestStuff.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +180,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DAC062A8141806B000B974CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAC062AE141806B000B974CB /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAC062BE141806B000B974CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAC062C3141806B000B974CB /* SenTestingKit.framework in Frameworks */,
+				DAC062C4141806B100B974CB /* Cocoa.framework in Frameworks */,
+				DAC062C7141806B100B974CB /* FirestormBSON-Framework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAC062D9141806CB00B974CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAC062DE141806CB00B974CB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -74,6 +214,10 @@
 			children = (
 				DA5E6CAB1416B78100CE1C1D /* FirestormBSON */,
 				DA5E6CC11416B78100CE1C1D /* FirestormBSONTests */,
+				DA5E6CEF1416B7B600CE1C1D /* Mongo C Driver */,
+				DAC062B3141806B000B974CB /* FirestormBSON-Framework */,
+				DAC062C8141806B100B974CB /* FirestormBSON-FrameworkTests */,
+				DAC062DF141806CB00B974CB /* TestStuff */,
 				DA5E6CA81416B78100CE1C1D /* Frameworks */,
 				DA5E6CA71416B78100CE1C1D /* Products */,
 			);
@@ -84,6 +228,9 @@
 			children = (
 				DA5E6CA61416B78100CE1C1D /* libFirestormBSON.a */,
 				DA5E6CB61416B78100CE1C1D /* FirestormBSONTests.octest */,
+				DAC062AC141806B000B974CB /* FirestormBSON-Framework.framework */,
+				DAC062C2141806B000B974CB /* FirestormBSON-FrameworkTests.octest */,
+				DAC062DC141806CB00B974CB /* TestStuff */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +242,8 @@
 				DA5E6CB71416B78100CE1C1D /* SenTestingKit.framework */,
 				DA5E6CB91416B78100CE1C1D /* UIKit.framework */,
 				DA5E6CBC1416B78100CE1C1D /* CoreGraphics.framework */,
+				DAC062AD141806B000B974CB /* Cocoa.framework */,
+				DAC062AF141806B000B974CB /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -102,8 +251,11 @@
 		DA5E6CAB1416B78100CE1C1D /* FirestormBSON */ = {
 			isa = PBXGroup;
 			children = (
-				DA5E6CAE1416B78100CE1C1D /* FirestormBSON.h */,
-				DA5E6CAF1416B78100CE1C1D /* FirestormBSON.m */,
+				DA5E6CAE1416B78100CE1C1D /* FSBsonParser.h */,
+				DA5E6CAF1416B78100CE1C1D /* FSBsonParser.m */,
+				DA5E6CF01416B98800CE1C1D /* FSBsonSerializer.h */,
+				DA5E6CF11416B98800CE1C1D /* FSBsonSerializer.m */,
+				DAC062A41417BAB600B974CB /* FSBsonSerializable.h */,
 				DA5E6CAC1416B78100CE1C1D /* Supporting Files */,
 			);
 			path = FirestormBSON;
@@ -136,6 +288,94 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DA5E6CEF1416B7B600CE1C1D /* Mongo C Driver */ = {
+			isa = PBXGroup;
+			children = (
+				DA5E6CD31416B7B100CE1C1D /* bson.c */,
+				DA5E6CD41416B7B100CE1C1D /* bson.h */,
+				DA5E6CD51416B7B100CE1C1D /* encoding.c */,
+				DA5E6CD61416B7B100CE1C1D /* encoding.h */,
+				DA5E6CD71416B7B100CE1C1D /* gridfs.c */,
+				DA5E6CD81416B7B100CE1C1D /* gridfs.h */,
+				DA5E6CD91416B7B100CE1C1D /* md5.c */,
+				DA5E6CDA1416B7B100CE1C1D /* md5.h */,
+				DA5E6CDB1416B7B100CE1C1D /* mongo.c */,
+				DA5E6CDC1416B7B100CE1C1D /* mongo.h */,
+				DA5E6CDD1416B7B100CE1C1D /* net.c */,
+				DA5E6CDE1416B7B100CE1C1D /* net.h */,
+				DA5E6CDF1416B7B100CE1C1D /* numbers.c */,
+				DA5E6CE01416B7B100CE1C1D /* platform.h */,
+			);
+			name = "Mongo C Driver";
+			sourceTree = "<group>";
+		};
+		DAC062AF141806B000B974CB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAC062B0141806B000B974CB /* AppKit.framework */,
+				DAC062B1141806B000B974CB /* CoreData.framework */,
+				DAC062B2141806B000B974CB /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		DAC062B3141806B000B974CB /* FirestormBSON-Framework */ = {
+			isa = PBXGroup;
+			children = (
+				DAC062BA141806B000B974CB /* FirestormBSON-Framework.h */,
+				DAC062BB141806B000B974CB /* FirestormBSON-Framework.m */,
+				DAC062B4141806B000B974CB /* Supporting Files */,
+			);
+			path = "FirestormBSON-Framework";
+			sourceTree = "<group>";
+		};
+		DAC062B4141806B000B974CB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAC062B5141806B000B974CB /* FirestormBSON-Framework-Info.plist */,
+				DAC062B6141806B000B974CB /* InfoPlist.strings */,
+				DAC062B9141806B000B974CB /* FirestormBSON-Framework-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DAC062C8141806B100B974CB /* FirestormBSON-FrameworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				DAC062CE141806B100B974CB /* FirestormBSON_FrameworkTests.h */,
+				DAC062D0141806B100B974CB /* FirestormBSON_FrameworkTests.m */,
+				DAC062C9141806B100B974CB /* Supporting Files */,
+			);
+			path = "FirestormBSON-FrameworkTests";
+			sourceTree = "<group>";
+		};
+		DAC062C9141806B100B974CB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAC062CA141806B100B974CB /* FirestormBSON-FrameworkTests-Info.plist */,
+				DAC062CB141806B100B974CB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DAC062DF141806CB00B974CB /* TestStuff */ = {
+			isa = PBXGroup;
+			children = (
+				DAC062E0141806CC00B974CB /* main.m */,
+				DAC062E4141806CC00B974CB /* TestStuff.1 */,
+				DAC062E2141806CC00B974CB /* Supporting Files */,
+			);
+			path = TestStuff;
+			sourceTree = "<group>";
+		};
+		DAC062E2141806CC00B974CB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAC062E3141806CC00B974CB /* TestStuff-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -143,6 +383,33 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA5E6CE21416B7B100CE1C1D /* bson.h in Headers */,
+				DA5E6CE41416B7B100CE1C1D /* encoding.h in Headers */,
+				DA5E6CE61416B7B100CE1C1D /* gridfs.h in Headers */,
+				DA5E6CE81416B7B100CE1C1D /* md5.h in Headers */,
+				DA5E6CEA1416B7B100CE1C1D /* mongo.h in Headers */,
+				DA5E6CEC1416B7B100CE1C1D /* net.h in Headers */,
+				DA5E6CEE1416B7B100CE1C1D /* platform.h in Headers */,
+				DA5E6CF21416B98800CE1C1D /* FSBsonSerializer.h in Headers */,
+				DAC062A51417BAB600B974CB /* FSBsonSerializable.h in Headers */,
+				DAC062FA1418070C00B974CB /* FSBsonParser.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAC062A9141806B000B974CB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAC062F91418070900B974CB /* FSBsonParser.h in Headers */,
+				DAC062FD1418071A00B974CB /* FSBsonSerializer.h in Headers */,
+				DAC063001418072300B974CB /* FSBsonSerializable.h in Headers */,
+				DAC063011418073700B974CB /* bson.h in Headers */,
+				DAC063021418073E00B974CB /* encoding.h in Headers */,
+				DAC063031418074400B974CB /* gridfs.h in Headers */,
+				DAC063041418074A00B974CB /* md5.h in Headers */,
+				DAC063051418075000B974CB /* mongo.h in Headers */,
+				DAC063061418075600B974CB /* net.h in Headers */,
+				DAC063071418075B00B974CB /* platform.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +452,60 @@
 			productReference = DA5E6CB61416B78100CE1C1D /* FirestormBSONTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		DAC062AB141806B000B974CB /* FirestormBSON-Framework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAC062D2141806B100B974CB /* Build configuration list for PBXNativeTarget "FirestormBSON-Framework" */;
+			buildPhases = (
+				DAC062A7141806B000B974CB /* Sources */,
+				DAC062A8141806B000B974CB /* Frameworks */,
+				DAC062A9141806B000B974CB /* Headers */,
+				DAC062AA141806B000B974CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FirestormBSON-Framework";
+			productName = "FirestormBSON-Framework";
+			productReference = DAC062AC141806B000B974CB /* FirestormBSON-Framework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DAC062C1141806B000B974CB /* FirestormBSON-FrameworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAC062D5141806B100B974CB /* Build configuration list for PBXNativeTarget "FirestormBSON-FrameworkTests" */;
+			buildPhases = (
+				DAC062BD141806B000B974CB /* Sources */,
+				DAC062BE141806B000B974CB /* Frameworks */,
+				DAC062BF141806B000B974CB /* Resources */,
+				DAC062C0141806B000B974CB /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DAC062C6141806B100B974CB /* PBXTargetDependency */,
+			);
+			name = "FirestormBSON-FrameworkTests";
+			productName = "FirestormBSON-FrameworkTests";
+			productReference = DAC062C2141806B000B974CB /* FirestormBSON-FrameworkTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		DAC062DB141806CB00B974CB /* TestStuff */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAC062E6141806CC00B974CB /* Build configuration list for PBXNativeTarget "TestStuff" */;
+			buildPhases = (
+				DAC062D8141806CB00B974CB /* Sources */,
+				DAC062D9141806CB00B974CB /* Frameworks */,
+				DAC062DA141806CB00B974CB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestStuff;
+			productName = TestStuff;
+			productReference = DAC062DC141806CB00B974CB /* TestStuff */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -207,6 +528,9 @@
 			targets = (
 				DA5E6CA51416B78100CE1C1D /* FirestormBSON */,
 				DA5E6CB51416B78100CE1C1D /* FirestormBSONTests */,
+				DAC062AB141806B000B974CB /* FirestormBSON-Framework */,
+				DAC062C1141806B000B974CB /* FirestormBSON-FrameworkTests */,
+				DAC062DB141806CB00B974CB /* TestStuff */,
 			);
 		};
 /* End PBXProject section */
@@ -218,6 +542,23 @@
 			files = (
 				DA5E6CC61416B78100CE1C1D /* InfoPlist.strings in Resources */,
 				DA5E6CC81416B78100CE1C1D /* FirestormBSONTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAC062AA141806B000B974CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAC062B8141806B000B974CB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAC062BF141806B000B974CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAC062CD141806B100B974CB /* InfoPlist.strings in Resources */,
+				DAC062CF141806B100B974CB /* FirestormBSON_FrameworkTests.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +578,19 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		DAC062C0141806B000B974CB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -244,7 +598,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA5E6CB01416B78100CE1C1D /* FirestormBSON.m in Sources */,
+				DA5E6CB01416B78100CE1C1D /* FSBsonParser.m in Sources */,
+				DA5E6CE11416B7B100CE1C1D /* bson.c in Sources */,
+				DA5E6CE31416B7B100CE1C1D /* encoding.c in Sources */,
+				DA5E6CE51416B7B100CE1C1D /* gridfs.c in Sources */,
+				DA5E6CE71416B7B100CE1C1D /* md5.c in Sources */,
+				DA5E6CE91416B7B100CE1C1D /* mongo.c in Sources */,
+				DA5E6CEB1416B7B100CE1C1D /* net.c in Sources */,
+				DA5E6CED1416B7B100CE1C1D /* numbers.c in Sources */,
+				DA5E6CF31416B98800CE1C1D /* FSBsonSerializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +618,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DAC062A7141806B000B974CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAC062BC141806B000B974CB /* FirestormBSON-Framework.m in Sources */,
+				DAC062E9141806DA00B974CB /* bson.c in Sources */,
+				DAC062EB141806DD00B974CB /* encoding.c in Sources */,
+				DAC062ED141806E200B974CB /* gridfs.c in Sources */,
+				DAC062EF141806E500B974CB /* md5.c in Sources */,
+				DAC062F1141806E900B974CB /* mongo.c in Sources */,
+				DAC062F3141806ED00B974CB /* net.c in Sources */,
+				DAC062F5141806F000B974CB /* numbers.c in Sources */,
+				DAC062FB1418071100B974CB /* FSBsonParser.m in Sources */,
+				DAC062FE1418071F00B974CB /* FSBsonSerializer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAC062BD141806B000B974CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAC062D1141806B100B974CB /* FirestormBSON_FrameworkTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAC062D8141806CB00B974CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAC062E1141806CC00B974CB /* main.m in Sources */,
+				DAC062EA141806DA00B974CB /* bson.c in Sources */,
+				DAC062EC141806DE00B974CB /* encoding.c in Sources */,
+				DAC062EE141806E200B974CB /* gridfs.c in Sources */,
+				DAC062F0141806E600B974CB /* md5.c in Sources */,
+				DAC062F2141806EA00B974CB /* mongo.c in Sources */,
+				DAC062F4141806EE00B974CB /* net.c in Sources */,
+				DAC062F6141806F100B974CB /* numbers.c in Sources */,
+				DAC062FC1418071100B974CB /* FSBsonParser.m in Sources */,
+				DAC062FF1418072000B974CB /* FSBsonSerializer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -264,6 +668,11 @@
 			target = DA5E6CA51416B78100CE1C1D /* FirestormBSON */;
 			targetProxy = DA5E6CBE1416B78100CE1C1D /* PBXContainerItemProxy */;
 		};
+		DAC062C6141806B100B974CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DAC062AB141806B000B974CB /* FirestormBSON-Framework */;
+			targetProxy = DAC062C5141806B100B974CB /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -271,6 +680,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				DA5E6CC51416B78100CE1C1D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DAC062B6141806B000B974CB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAC062B7141806B000B974CB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DAC062CB141806B100B974CB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAC062CC141806B100B974CB /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -292,7 +717,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -308,7 +733,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -372,6 +797,126 @@
 			};
 			name = Release;
 		};
+		DAC062D3141806B100B974CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FirestormBSON-Framework/FirestormBSON-Framework-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "FirestormBSON-Framework/FirestormBSON-Framework-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		DAC062D4141806B100B974CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FirestormBSON-Framework/FirestormBSON-Framework-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "FirestormBSON-Framework/FirestormBSON-Framework-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		DAC062D6141806B100B974CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FirestormBSON-Framework/FirestormBSON-Framework-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "FirestormBSON-FrameworkTests/FirestormBSON-FrameworkTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		DAC062D7141806B100B974CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FirestormBSON-Framework/FirestormBSON-Framework-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "FirestormBSON-FrameworkTests/FirestormBSON-FrameworkTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		DAC062E7141806CC00B974CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestStuff/TestStuff-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DAC062E8141806CC00B974CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestStuff/TestStuff-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -391,12 +936,38 @@
 				DA5E6CCF1416B78100CE1C1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA5E6CD01416B78100CE1C1D /* Build configuration list for PBXNativeTarget "FirestormBSONTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA5E6CD11416B78100CE1C1D /* Debug */,
 				DA5E6CD21416B78100CE1C1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAC062D2141806B100B974CB /* Build configuration list for PBXNativeTarget "FirestormBSON-Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAC062D3141806B100B974CB /* Debug */,
+				DAC062D4141806B100B974CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DAC062D5141806B100B974CB /* Build configuration list for PBXNativeTarget "FirestormBSON-FrameworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAC062D6141806B100B974CB /* Debug */,
+				DAC062D7141806B100B974CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DAC062E6141806CC00B974CB /* Build configuration list for PBXNativeTarget "TestStuff" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAC062E7141806CC00B974CB /* Debug */,
+				DAC062E8141806CC00B974CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
