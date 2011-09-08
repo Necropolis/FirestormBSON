@@ -84,7 +84,6 @@
     NSMutableArray * arr = [[NSMutableArray alloc] init];
     
     while (bson_iterator_next(&sub)) {
-        id value = [self parseValue:&sub error:error];
         [arr addObject:[self parseValue:&sub error:error]];
     }
     

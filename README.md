@@ -42,7 +42,7 @@ result = {
     dict =     {
         Key = Value;
     };
-    pi = 3; // known bug
+    pi = "3.141592741012573";
 }
 */
 ```

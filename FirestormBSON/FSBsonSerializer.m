@@ -119,14 +119,14 @@
 - (void)serializeNumber:(NSNumber *)num withName:(NSString *)name toBson:(bson *)bson
 {
     const char * type = [num objCType];                 const char * _name = NAME_OR_ZERO(name);
-         if (strcmp(type, @encode(int)))                bson_append_int(        bson, _name, [num intValue]                     );
-    else if (strcmp(type, @encode(unsigned int)))       bson_append_int(        bson, _name, [num unsignedIntValue]             );
-    else if (strcmp(type, @encode(long)))               bson_append_long(       bson, _name, [num longValue]                    );
-    else if (strcmp(type, @encode(unsigned long)))      bson_append_long(       bson, _name, [num unsignedLongValue]            );
-    else if (strcmp(type, @encode(NSUInteger)))         bson_append_nsuinteger( bson, _name, [num unsignedIntegerValue]         );
-    else if (strcmp(type, @encode(NSInteger)))          bson_append_nsinteger(  bson, _name, [num integerValue]                 );
-    else if (strcmp(type, @encode(float)))              bson_append_double(     bson, _name, (double)[num floatValue]           );
-    else if (strcmp(type, @encode(double)))             bson_append_double(     bson, _name, [num doubleValue]                  );
+         if (type[0] == @encode(int)[0])                bson_append_int(        bson, _name, [num intValue]                     );
+    else if (type[0] == @encode(unsigned int)[0])       bson_append_int(        bson, _name, [num unsignedIntValue]             );
+    else if (type[0] == @encode(long)[0])               bson_append_long(       bson, _name, [num longValue]                    );
+    else if (type[0] == @encode(unsigned long)[0])      bson_append_long(       bson, _name, [num unsignedLongValue]            );
+    else if (type[0] == @encode(NSUInteger)[0])         bson_append_nsuinteger( bson, _name, [num unsignedIntegerValue]         );
+    else if (type[0] == @encode(NSInteger)[0])          bson_append_nsinteger(  bson, _name, [num integerValue]                 );
+    else if (type[0] == @encode(float)[0])              bson_append_double(     bson, _name, (double)[num floatValue]           );
+    else if (type[0] == @encode(double)[0])             bson_append_double(     bson, _name, [num doubleValue]                  );
     else [NSException raise:@"Unknown Data Type" format:@"Please write a case for %s in FSBsonSerializer.m; please consider making it a pull request back so that NSError can add it to the main repository.", __PRETTY_FUNCTION__];
 }
 
