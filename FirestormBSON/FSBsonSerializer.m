@@ -37,8 +37,10 @@
 
 + (NSData *)serialize:(id)object
 {
-    
-    return nil;
+    FSBsonSerializer * serializer = [[FSBsonSerializer alloc] init];
+    NSData * data = [serializer serialize:object];
+    [serializer release];
+    return data;
 }
 
 - (NSData *)serialize:(id)object

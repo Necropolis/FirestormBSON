@@ -18,29 +18,22 @@ int main (int argc, const char * argv[])
 
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 
-    NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary * dict = [NSMutableDictionary dictionary];
+	[dict setObject:[NSNumber numberWithInt:70] forKey:@"aNumber"];
+	[dict setObject:[NSNumber numberWithDouble:3.1415926532f] forKey:@"pi"];
+	[dict setObject:[NSArray arrayWithObjects:@"String!", @"String?", nil] forKey:@"anArray"];
+	[dict setObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Value", @"Key", nil] forKey:@"dict"];
     
-    [dict setObject:[NSNumber numberWithInt:70] forKey:@"aNumber"];
-    [dict setObject:[NSNumber numberWithDouble:3.141592654f] forKey:@"pi"];
-    [dict setObject:[NSArray arrayWithObjects:@"String!", @"String?", nil] forKey:@"anArray"];
-    [dict setObject:[NSDictionary dictionaryWithObjectsAndKeys:@"Value", @"Key", nil] forKey:@"dict"];
+	NSLog(@"Input: %@", dict);
     
-    FSBsonSerializer * serializer = [[FSBsonSerializer alloc] init];
+	NSData * data = [FSBsonSerializer serialize:dict];
     
-    NSLog(@"Input: %@", dict);
-    
-    NSData * d = [serializer serialize:dict];
-    
-    NSLog(@"Data: %@", d);
-    
-    NSError * error = nil;
-    id result = [FSBsonParser parseData:d error:&error];
-    
+	
+	NSError * error = nil;
+	id result = [FSBsonParser parseData:data error:&error];
+
     NSLog(@"Result: %@", result);
     
-    [dict release];
-    [serializer release];
-
     [pool drain];
     return 0;
 }
