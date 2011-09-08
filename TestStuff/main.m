@@ -28,6 +28,7 @@ int main (int argc, const char * argv[])
     
 	NSData * data = [FSBsonSerializer serialize:dict];
     
+    NSLog(@"%@", data);
 	
 	NSError * error = nil;
 	id result = [FSBsonParser parseData:data error:&error];

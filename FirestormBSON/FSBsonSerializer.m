@@ -9,27 +9,22 @@
 #import "FSBsonSerializer.h"
 
 #define NAME_OR_ZERO(name) (name)?[name UTF8String]:"0"
-#ifdef __LP64__
-    #define bson_append_nsinteger(bson, name, value) bson_append_long(bson, name, value)
-    #define bson_append_nsuinteger(bson, name, value) bson_append_long(bson, name, value)
-#else
-    #define bson_append_nsinteger(bson, name, value) bson_append_int(bson, name, value)
-    #define bson_append_nsuinteger(bson, name, value) bson_append_int(bson, name, value)
-#endif
 
 @interface FSBsonSerializer() {
     NSNull * null;
+    
+    Class null_class;
+    Class dictionary_class;
+    Class array_class;
+    Class string_class;
+    Class number_class;
+    Class value_class;
+    Class date_class;
+    Class data_class;
 }
 
 - (void)serializeWhatever:(id)whatever withName:(NSString *)name toBson:(bson *)bson;
-- (void)serializeDictionary:(NSDictionary *)dict withName:(NSString *)name toBson:(bson *)bson;
-- (void)serializeArray:(NSArray *)arr withName:(NSString *)name toBson:(bson *)bson;
-- (void)serializeString:(NSString *)string withName:(NSString *)name toBson:(bson *)bson;
 - (void)serializeValue:(NSValue *)val withName:(NSString *)name toBson:(bson *)bson;
-- (void)serializeNumber:(NSNumber *)num withName:(NSString *)name toBson:(bson *)bson;
-- (void)serializeDate:(NSDate *)date withName:(NSString *)name toBson:(bson *)bson;
-- (void)serializeData:(NSData *)data withName:(NSString *)name toBson:(bson *)bson;
-- (void)serializeNullWithName:(NSString *)name toBson:(bson *)bson;
 
 @end
 
@@ -62,87 +57,72 @@
 
 - (void)serializeWhatever:(id)whatever withName:(NSString *)name toBson:(bson *)bson
 {
-         if (whatever == nil)
-        [self serializeNullWithName:name toBson:bson];
-    else if ([whatever isKindOfClass:[NSNull class]])
-        [self serializeNullWithName:name toBson:bson];
-    else if ([whatever isKindOfClass:[NSDictionary class]])
-        [self serializeDictionary:whatever withName:name toBson:bson];
-    else if ([whatever isKindOfClass:[NSArray class]])
-        [self serializeArray:whatever withName:name toBson:bson];
-    else if ([whatever isKindOfClass:[NSString class]])
+    //                  NULL
+    if (whatever == nil)
+        bson_append_null(bson, NAME_OR_ZERO(name));
+    else if ([whatever isKindOfClass:self->null_class])
+        bson_append_null(bson, NAME_OR_ZERO(name));
+    //                  NUMBER
+    else if ([whatever isKindOfClass:self->number_class]) {
+        // rather shamelessly copied from NuBSON
+        const char * objCType = [whatever objCType];
+        switch (*objCType) {
+            case 'd':
+            case 'f':
+                bson_append_double(bson, NAME_OR_ZERO(name), [whatever doubleValue]);
+                break;
+            case 'l':
+            case 'L':
+                bson_append_long(bson, NAME_OR_ZERO(name), [whatever longValue]);
+                break;
+            case 'q':
+            case 'Q':
+                bson_append_long(bson, NAME_OR_ZERO(name), [whatever longLongValue]);
+                break;
+            case 'B':
+                bson_append_bool(bson, NAME_OR_ZERO(name), [whatever boolValue]);
+                break;
+            case 'c':
+            case 'C':
+            case 's':
+            case 'S':
+            case 'i':
+            case 'I':                
+            default:
+                bson_append_int(bson, NAME_OR_ZERO(name), [whatever intValue]);
+                break;
+        }
+    }
+    //                  DICTIONARY
+    else if ([whatever isKindOfClass:self->dictionary_class]) {
+        bson_append_start_object(bson, NAME_OR_ZERO(name));
+        NSArray * keys = [whatever allKeys];
+        for (id key in keys)
+            [self serializeWhatever:[whatever objectForKey:key] withName:[key description] toBson:bson];
+        bson_append_finish_object(bson);
+    }
+    else if ([whatever isKindOfClass:self->array_class]) {
+        bson_append_start_array(bson, NAME_OR_ZERO(name));
+        for (id object in whatever)
+            [self serializeWhatever:object withName:nil toBson:bson];
+        bson_append_finish_array(bson);
+    }
+    else if ([whatever isKindOfClass:self->string_class])
         bson_append_string(bson, NAME_OR_ZERO(name), [whatever UTF8String]);
-    else if ([whatever isKindOfClass:[NSNumber class]])
-        [self serializeNumber:whatever withName:name toBson:bson];
-    else if ([whatever isKindOfClass:[NSValue class]])
+    else if ([whatever isKindOfClass:self->value_class])
         [self serializeValue:whatever withName:name toBson:bson];
-    else if ([whatever isKindOfClass:[NSDate class]])
-        [self serializeDate:whatever withName:name toBson:bson];
-    else if ([whatever isKindOfClass:[NSData class]])
-        [self serializeData:whatever withName:name toBson:bson];
+    else if ([whatever isKindOfClass:self->date_class])
+        bson_append_date(bson, NAME_OR_ZERO(name), [whatever timeIntervalSince1970]);
+    else if ([whatever isKindOfClass:self->data_class])
+        bson_append_binary(bson, NAME_OR_ZERO(name), 0, [whatever bytes], [whatever length]);
     else
         [NSException raise:@"Unknown Object Type" format:@"I don't know how to serialize this kind of a class. Please consider making it a pull request if you write a serializer for this class."];
     
 }
 
-- (void)serializeDictionary:(NSDictionary *)dict withName:(NSString *)name toBson:(bson *)bson
-{
-    bson_append_start_object(bson, NAME_OR_ZERO(name));
-    
-    NSArray * keys = [dict allKeys];
-    for (id key in keys)
-        [self serializeWhatever:[dict objectForKey:key] withName:[key description] toBson:bson];
-    
-    bson_append_finish_object(bson);
-}
-
-- (void)serializeArray:(NSArray *)arr withName:(NSString *)name toBson:(bson *)bson
-{
-    bson_append_start_array(bson, NAME_OR_ZERO(name));
-    
-    for (id object in arr)
-        [self serializeWhatever:object withName:nil toBson:bson];
-    
-    bson_append_finish_object(bson);
-}
-
-- (void)serializeString:(NSString *)string withName:(NSString *)name toBson:(bson *)bson
-{
-    
-}
-
 - (void)serializeValue:(NSValue *)val withName:(NSString *)name toBson:(bson *)bson
 {
-
-}
-
-- (void)serializeNumber:(NSNumber *)num withName:(NSString *)name toBson:(bson *)bson
-{
-    const char * type = [num objCType];                 const char * _name = NAME_OR_ZERO(name);
-         if (type[0] == @encode(int)[0])                bson_append_int(        bson, _name, [num intValue]                     );
-    else if (type[0] == @encode(unsigned int)[0])       bson_append_int(        bson, _name, [num unsignedIntValue]             );
-    else if (type[0] == @encode(long)[0])               bson_append_long(       bson, _name, [num longValue]                    );
-    else if (type[0] == @encode(unsigned long)[0])      bson_append_long(       bson, _name, [num unsignedLongValue]            );
-    else if (type[0] == @encode(NSUInteger)[0])         bson_append_nsuinteger( bson, _name, [num unsignedIntegerValue]         );
-    else if (type[0] == @encode(NSInteger)[0])          bson_append_nsinteger(  bson, _name, [num integerValue]                 );
-    else if (type[0] == @encode(float)[0])              bson_append_double(     bson, _name, (double)[num floatValue]           );
-    else if (type[0] == @encode(double)[0])             bson_append_double(     bson, _name, [num doubleValue]                  );
-    else [NSException raise:@"Unknown Data Type" format:@"Please write a case for %s in FSBsonSerializer.m; please consider making it a pull request back so that NSError can add it to the main repository.", __PRETTY_FUNCTION__];
-}
-
-- (void)serializeDate:(NSDate *)date withName:(NSString *)name toBson:(bson *)bson
-{
-    bson_append_date(bson, NAME_OR_ZERO(name), [date timeIntervalSince1970]);
-}
-
-- (void)serializeData:(NSData *)data withName:(NSString *)name toBson:(bson *)bson
-{
-    
-}
-
-- (void)serializeNullWithName:(NSString *)name toBson:(bson *)bson
-{
-    bson_append_null(bson, NAME_OR_ZERO(name));
+    [NSException raise:@"Todo" format:@"I still need to write this!"];
 }
 
 - (id)init
@@ -150,6 +130,14 @@
     self = [super init];
     if (self) {
         null = [NSNull null];
+        self->null_class = [NSNull class];
+        self->dictionary_class = [NSDictionary class];
+        self->array_class = [NSArray class];
+        self->string_class = [NSString class];
+        self->number_class = [NSNumber class];
+        self->value_class = [NSValue class];
+        self->date_class = [NSDate class];
+        self->data_class = [NSData class];
     }
     
     return self;
